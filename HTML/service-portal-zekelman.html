@@ -1,0 +1,464 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="/Enterprise-widgets/CSS/service-portal-zekelman.css"
+    />
+  </head>
+  <body>
+    <div
+      class="sp-page-root page flex-column sp-can-animate"
+      ng-class="{'sp-loading': main.firstPage, 'sp-can-animate': main.doAnimate}"
+      style=""
+    >
+      <!-- ngIf: main.firstPage -->
+      <div>
+        <sn-banner banner-api-url="bannerApiUrl" class="ng-isolate-scope"
+          ><!-- ngIf: banner.show == true --></sn-banner
+        >
+      </div>
+      <!-- ngIf: theme.header && theme.navbar_fixed -->
+      <header
+        ng-if="theme.header &amp;&amp; theme.navbar_fixed"
+        role="banner"
+        class="ng-scope"
+      >
+        <a
+          class="skip-link sr-only"
+          ng-click="main.focusOnPageTitle(true, $event)"
+          href="javascript:void(0)"
+          >Skip to page content</a
+        ><!-- ngIf: c.totalAnnouncements !== 0 -->
+        <div
+          class="vbf5ec2f2cb10120000f8d856634c9c0c ng-scope"
+          data="data"
+          options="options"
+          widget="widget"
+          server="server"
+          sn-atf-area="Stock Header"
+        >
+          <div>
+            <nav
+              class="navbar-inverse navbar"
+              ng-class="::{'navbar':!isViewNative, 'is-native': isViewNative}"
+              role="navigation"
+              aria-label="Primary"
+            >
+              <div
+                ng-show="::!isViewNative"
+                class="navbar-header"
+                aria-hidden="false"
+              >
+                <!-- ngIf: ::!portal.logo -->
+                <!-- ngIf: ::portal.logo --><a
+                  class="navbar-brand navbar-brand-logo ng-scope"
+                  ng-if="::portal.logo"
+                  ng-href="?id=index"
+                  ng-click="collapse()"
+                  aria-label="Go to Service Portal  Homepage"
+                  href="?id=index"
+                >
+                  <img
+                    ng-src="2ec2d07bdbdc08d423fb44261b961962.iix"
+                    title="Service Portal "
+                    alt="Service Portal  Logo"
+                    src="2ec2d07bdbdc08d423fb44261b961962.iix"
+                  /> </a
+                ><!-- end ngIf: ::portal.logo -->
+                <!-- ngIf: data.hasMenuItems || (!user.logged_in && page.id != portal.login_page_dv && !data.hasLogin) || user.logged_in -->
+              </div>
+              <div
+                sp-navbar-toggle=""
+                class="collapse navbar-right"
+                id="sp-nav-bar"
+              >
+                <!-- ngIf: !hideSparkle -->
+                <!-- Include The Menu -->
+                <ul
+                  class="v5ef595c1cb12020000f8d856634c9c6e nav navbar-nav ng-scope"
+                  aria-label="Header"
+                  id="xd150fd31cb10020000f8d856634c9ce6"
+                  data="data"
+                  options="options"
+                  widget="widget"
+                  server="server"
+                  sn-atf-area="SP Header Menu"
+                >
+                  <div
+                    class="header-loader invisible"
+                    ng-class="{'invisible': !loadingIndicator}"
+                  >
+                    <div class="hidden-xs hidden-sm sp-loading-indicator la-sm">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                  </div>
+                  <!-- ngRepeat: item in visibleItems -->
+                  <!-- Wishlist menu -->
+                  <!-- ngIf: options.enable_wishlist && data.isLoggedIn && data.showWishlist -->
+                  <!-- ngIf: options.enable_wishlist && data.isLoggedIn && data.showWishlist -->
+                  <!-- Shopping cart stuff -->
+                  <!-- ngIf: ::options.enable_cart && data.isLoggedIn -->
+                  <!-- ngIf: ::options.enable_cart && data.isLoggedIn -->
+                  <!-- ngIf: data.isLoggedIn && data.guidedTours && !isMobile -->
+                </ul>
+                <!-- Language Selector Menu -->
+                <sp-widget
+                  widget="::data.langSelector"
+                  class="ng-isolate-scope"
+                ></sp-widget>
+                <!-- ngIf: (!user.logged_in && page.id != portal.login_page_dv && !data.hasLogin) -->
+                <!-- ngIf: user.logged_in -->
+              </div>
+            </nav>
+          </div>
+        </div>
+        <!-- ngRepeat: subheader in subheaders -->
+      </header>
+      <!-- end ngIf: theme.header && theme.navbar_fixed -->
+      <div id="uiNotificationContainer" role="none" aria-atomic="false">
+        <!-- ngIf: c.showClearAll() -->
+        <!-- ngRepeat: m in c.notifications -->
+      </div>
+      <div
+        class="sp-page-loader-mobile visible-xs visible-sm sp-loading-indicator la-sm invisible"
+        ng-class="{invisible: main.firstPage || !main.loadingIndicator}"
+      >
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <section
+        ng-switch="page.has_custom_main_tag"
+        class="flex-grow page sp-scroll"
+        role="presentation"
+        tabindex="-1"
+      >
+        <!-- ngIf: theme.header && !theme.navbar_fixed --><!-- ngIf: !theme.header --><!-- ngSwitchWhen: false -->
+        <main
+          ng-switch-when="false"
+          class="body padding-top ng-scope"
+          data-page-id="36c61807cb31120000f8d856634c9ca9"
+          data-page-title="Service Portal"
+          role="main"
+        >
+          <div
+            class="sr-only ng-binding ng-isolate-scope"
+            role="heading"
+            aria-level="1"
+            page-title="page.title"
+          >
+            Service Portal
+          </div>
+          <!-- ngRepeat: container in containers -->
+          <div
+            ng-switch="container.semantic_tag"
+            ng-repeat="container in containers"
+            ng-style="main.parseJSON(container.background)"
+            ng-class="::[container.class_name, 'c' + container.sys_id]"
+            class="ng-scope caa7998d7cb31120000f8d856634c9cae"
+            style="background-size: initial; background-position: center center"
+          >
+            <!-- ngSwitchWhen: main --><!-- ngSwitchDefault: -->
+            <div
+              ng-switch-default=""
+              ng-class="::main.getContainerClasses(container)"
+              class="ng-scope container"
+            >
+              <!-- ngIf: ::container.title --><!-- ngRepeat: row in ::container.rows track by row.sys_id --><sp-page-row
+                ng-repeat="row in ::container.rows track by row.sys_id"
+                columns="::row.columns"
+                row="::row"
+                container="::container"
+                class="ng-scope ng-isolate-scope"
+                ><!-- ngIf: row.semantic_tag !== 'main' --><!-- ngInclude: 'sp_page_row_content.xml' -->
+                <div
+                  ng-if="row.semantic_tag !== 'main'"
+                  ng-include="'sp_page_row_content.xml'"
+                  class="sp-row-content row"
+                >
+                  <!-- ngRepeat: column in columns track by column.sys_id -->
+                  <div
+                    ng-repeat="column in columns track by column.sys_id"
+                    ng-switch="column.semantic_tag"
+                    class="col-md-8"
+                  >
+                    <!-- ngSwitchDefault: --><!-- ngRepeat: row in column.rows track by row.sys_id --><!-- end ngSwitchWhen: --><!-- ngSwitchDefault: --><!-- ngRepeat: rectangle in column.widgets track by rectangle.instance_id --><span
+                      ng-switch-default=""
+                      ng-repeat="rectangle in column.widgets track by rectangle.instance_id"
+                      class="ng-scope"
+                      ><div
+                        id="x10a9d4d7cb31120000f8d856634c9c97"
+                        class="v8679ef89cb21120000f8d856634c9c4f ng-scope"
+                        data="data"
+                        options="options"
+                        widget="widget"
+                        server="server"
+                        sn-atf-area="Welcome to eZ portal - Landing"
+                      >
+                        <div>
+                          <!-- ngIf: !c.options.html -->
+                          <!-- ngIf: c.options.html -->
+                          <div
+                            ng-if="c.options.html"
+                            ng-bind-html="c.html"
+                            class="ng-binding ng-scope"
+                          >
+                            <div class="wrapper-xl welcome">
+                              <h1 class="text-white text-4x">
+                                Welcome to the<br />eZ Service Portal
+                              </h1>
+                              <h3 class="text-white">
+                                Log in to order things, get help or report an
+                                issue.&nbsp;
+                              </h3>
+                              <h3 class="text-white">
+                                To use SSO, select "Use external login" below
+                                and enter your zekelman credentials
+                              </h3>
+                            </div>
+                          </div>
+                          <!-- end ngIf: c.options.html -->
+                        </div>
+                      </div></span
+                    ><!-- end ngRepeat: rectangle in column.widgets track by rectangle.instance_id --><span
+                      ng-switch-default=""
+                      ng-repeat="rectangle in column.widgets track by rectangle.instance_id"
+                      class="ng-scope"
+                      ><div
+                        id="xdf3deb8b1b1aaa10a45c97d7b04bcbdb"
+                        class="v6506d341cb33020000f8d856634c9cdc ng-scope"
+                        data="data"
+                        options="options"
+                        widget="widget"
+                        server="server"
+                        sn-atf-area="Login"
+                      >
+                        <!-- ngIf: !data.is_logged_in -->
+                        <div
+                          ng-if="!data.is_logged_in"
+                          class="sp-login-widget ng-scope"
+                          ng-class="::(c.options.use_advanced == 'true' ? 'advanced' : '')"
+                        >
+                          <!-- ngIf: !c.externalLoginMode -->
+                          <form
+                            ng-if="!c.externalLoginMode"
+                            class="form-signin ng-pristine ng-valid ng-scope"
+                            ng-submit="c.login(c.username, c.password)"
+                            method="post"
+                          >
+                            <div
+                              ng-class="::{'panel panel-default': c.options.show_panel}"
+                              class="panel panel-default"
+                            >
+                              <!-- ngIf: ::c.options.show_panel -->
+                              <div
+                                ng-if="::c.options.show_panel"
+                                class="panel-heading padder-v ng-scope"
+                              >
+                                <h3 class="panel-title">Log in</h3>
+                              </div>
+                              <!-- end ngIf: ::c.options.show_panel -->
+                              <div
+                                ng-class="::{'panel-body': c.options.show_panel}"
+                                class="panel-body"
+                              >
+                                <div class="list-group list-group-sm">
+                                  <div class="list-group-item">
+                                    <label
+                                      for="username"
+                                      class="label-advanced ng-binding"
+                                      >User name</label
+                                    >
+                                    <input
+                                      id="username"
+                                      name="username"
+                                      autocapitalize="off"
+                                      ng-keypress="c.message = ''"
+                                      ng-click="c.message = ''"
+                                      class="form-control input-advanced input-group-advanced ng-pristine ng-valid ng-empty ng-touched"
+                                      type="text"
+                                      autofocus="true"
+                                      ng-model="c.username"
+                                      autocomplete="off"
+                                      role="textbox"
+                                      style=""
+                                    />
+                                  </div>
+                                  <div class="list-group-item">
+                                    <label
+                                      for="password"
+                                      class="label-advanced ng-binding"
+                                      >Password</label
+                                    >
+                                    <p
+                                      id="btnDescription"
+                                      class="sr-only"
+                                      aria-live="polite"
+                                    >
+                                      "Password hidden
+                                    </p>
+                                    <div
+                                      class="input-group password-group input-group-advanced"
+                                    >
+                                      <input
+                                        id="password"
+                                        name="password"
+                                        ng-keypress="c.message = ''"
+                                        ng-click="c.message = ''"
+                                        class="form-control input-advanced ng-pristine ng-untouched ng-valid ng-empty"
+                                        type="password"
+                                        ng-model="c.password"
+                                        autocomplete="off"
+                                        role="textbox"
+                                      />
+                                      <span class="input-advanced">
+                                        <button
+                                          id="mask_icon"
+                                          type="button"
+                                          class="btn btn-default icon-preview input-group-append mask_btn sn-tooltip-basic"
+                                          ng-click="c.renderMaskIcon()"
+                                          aria-label="Show Password"
+                                          data-toggle="tooltip"
+                                          data-container="body"
+                                          data-original-title="Show password"
+                                        ></button>
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- ngIf: c.message -->
+                                <!-- ngIf: c.success -->
+                                <!-- ngIf: ::!c.data.forgetMe -->
+                                <div
+                                  ng-if="::!c.data.forgetMe"
+                                  class="checkbox ng-scope"
+                                >
+                                  <label>
+                                    <input
+                                      name="c.remember_me"
+                                      ng-model="c.remember_me"
+                                      checked=""
+                                      id="remember_me"
+                                      type="checkbox"
+                                      class="checkbox ng-pristine ng-untouched ng-valid ng-empty"
+                                      value="true"
+                                      role="checkbox"
+                                    />
+                                    Remember me
+                                  </label>
+                                </div>
+                                <!-- end ngIf: ::!c.data.forgetMe -->
+                                <!--STRY50033370: Forgot Password link in the login widget-->
+                                <div class="forgot-pwd-div m-b">
+                                  <div class="row">
+                                    <!-- ngIf: ::(c.data.forgotPwdLinkProp == 'true') -->
+                                    <div
+                                      ng-if="::(c.data.forgotPwdLinkProp == 'true')"
+                                      class="forgot-text ng-scope col-xs-12"
+                                      ng-class="::(c.options.use_advanced == 'true' ? 'col-xs-8' : 'col-xs-12')"
+                                    >
+                                      <a
+                                        class="forgot-pwd-link"
+                                        ng-href="/$pwd_reset.do?sysparm_url=ss_default"
+                                        href="/$pwd_reset.do?sysparm_url=ss_default"
+                                        >Forgot Password ?</a
+                                      >
+                                    </div>
+                                    <!-- end ngIf: ::(c.data.forgotPwdLinkProp == 'true') -->
+                                    <div
+                                      ng-class="::(c.options.use_advanced == 'true' &amp;&amp; c.data.forgotPwdLinkProp =='true' ? 'col-xs-4' : 'col-xs-12')"
+                                      class="col-xs-12"
+                                    >
+                                      <button
+                                        name="login"
+                                        type="submit"
+                                        class="btn btn-lg btn-primary btn-block login-button-old"
+                                      >
+                                        Log in
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- ngIf: ::data.multisso_enabled -->
+                                <div
+                                  class="row set-login-type-link m-t ng-scope"
+                                  ng-if="::data.multisso_enabled"
+                                >
+                                  <div class="col-xs-12 text-center">
+                                    <a
+                                      href="javascript:void(0)"
+                                      ng-click="c.setExternalLogin(true)"
+                                      >Use external login</a
+                                    >
+                                  </div>
+                                </div>
+                                <!-- end ngIf: ::data.multisso_enabled -->
+                                <!-- ngIf: data.cert_based_auth || data.isShowLoginWithIdps -->
+                                <!-- ngIf: ::c.data.cert_based_auth -->
+                                <!-- ngRepeat: a in ::c.data.oidcRecords -->
+                              </div>
+                            </div>
+                          </form>
+                          <!-- end ngIf: !c.externalLoginMode -->
+                          <!-- ngIf: c.externalLoginMode -->
+                          <!-- ngIf: ::c.data.self_registration_record_producer -->
+                        </div>
+                        <!-- end ngIf: !data.is_logged_in -->
+                      </div></span
+                    ><!-- end ngRepeat: rectangle in column.widgets track by rectangle.instance_id --><!-- end ngSwitchWhen: --><!-- ngSwitchWhen: main -->
+                  </div>
+                  <!-- end ngRepeat: column in columns track by column.sys_id -->
+                  <div
+                    ng-repeat="column in columns track by column.sys_id"
+                    ng-switch="column.semantic_tag"
+                    class="m-t-xl col-md-4"
+                  >
+                    <!-- ngSwitchDefault: --><!-- ngRepeat: row in column.rows track by row.sys_id --><!-- end ngSwitchWhen: --><!-- ngSwitchDefault: --><!-- ngRepeat: rectangle in column.widgets track by rectangle.instance_id --><span
+                      ng-switch-default=""
+                      ng-repeat="rectangle in column.widgets track by rectangle.instance_id"
+                      class="ng-scope"
+                      ><div
+                        class="v ng-scope"
+                        data="data"
+                        options="options"
+                        widget="widget"
+                        server="server"
+                        sn-atf-area=""
+                      ></div></span
+                    ><!-- end ngRepeat: rectangle in column.widgets track by rectangle.instance_id --><span
+                      ng-switch-default=""
+                      ng-repeat="rectangle in column.widgets track by rectangle.instance_id"
+                      class="ng-scope"
+                      ><div
+                        class="v ng-scope"
+                        data="data"
+                        options="options"
+                        widget="widget"
+                        server="server"
+                        sn-atf-area=""
+                      ></div></span
+                    ><!-- end ngRepeat: rectangle in column.widgets track by rectangle.instance_id --><!-- end ngSwitchWhen: --><!-- ngSwitchWhen: main -->
+                  </div>
+                  <!-- end ngRepeat: column in columns track by column.sys_id -->
+                </div>
+                <!-- end ngIf: row.semantic_tag !== 'main' --><!-- ngIf: row.semantic_tag === 'main' --></sp-page-row
+              ><!-- end ngRepeat: row in ::container.rows track by row.sys_id -->
+            </div>
+            <!-- end ngSwitchWhen: -->
+          </div>
+          <!-- end ngRepeat: container in containers -->
+        </main>
+        <!-- end ngSwitchWhen: --><!-- ngSwitchDefault: --><!-- ngIf: !main.isObjectEmpty(theme.footer) && !theme.footer_fixed -->
+      </section>
+      <!-- ngIf: !main.isObjectEmpty(theme.footer) && theme.footer_fixed -->
+    </div>
+  </body>
+</html>
