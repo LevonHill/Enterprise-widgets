@@ -1,0 +1,33 @@
+/**
+ * Scoped reset - affects only your custom theme
+ *
+ * @format
+ */
+
+.my-sp-theme * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Define your CSS variables (if you'd like) */
+.my-sp-theme {
+  --primary-color: #007acc;
+  --secondary-color: #005fa3;
+  --font-body: "Segoe UI", sans-serif;
+}
+
+/* Apply your clean styles */
+.my-sp-theme body,
+.my-sp-theme .sp-page-root {
+  font-family: var(--font-body);
+  color: #333;
+}
+
+/* Example: Clean up headers */
+.my-sp-theme h1,
+.my-sp-theme h2,
+.my-sp-theme h3 {
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
